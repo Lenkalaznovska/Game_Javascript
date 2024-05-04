@@ -1,0 +1,85 @@
+#canvas {
+    background-image: url('img/inside.png');
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: skewY(0deg); /* Počáteční transformace */
+    }
+    50% {
+        transform: skewY(5deg); /* Transformace ve středním bodě */
+    }
+    100% {
+        transform: skewY(0deg); /* Návrat na původní transformaci */
+    }
+}
+
+body {
+    background-image: url("img/outside.png");
+    background-color: black;
+    background-repeat: repeat-x; /* Opakování pozadí pouze na ose X (šířka) */
+    text-align: center;
+    font-family: 'Bitter', serif;
+    font-weight: 700;
+    color: white;
+    padding: 0;
+    margin: 0;
+    animation: gradientAnimation 20s linear infinite; /* Animace rolování pozadí */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 0; /* Počáteční pozice pozadí */
+    }
+    100% {
+        background-position: 100% 0; /* Posun pozadí na konec na ose X (šířka) */
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Zarovnání položek */
+    width: 90%; /* Responsivní šířka */
+    max-width: 800px; /* Maximální šířka */
+    margin: 2% auto; /* Odsazení shora a zdola, automatické postranní odsazení */
+}
+
+header img {
+    margin-right: 10px;
+    width: 10%; /* Přizpůsobení šířky obrázku v hlavičce */
+}
+
+#score, #time {
+    position: relative;
+}
+
+button {
+    margin-top: 5vh; /* Přizpůsobení mezery */
+    padding: 2vh 4vw; /* Přizpůsobení poloměrů */
+    font-size: 2vw; /* Relativní velikost písma */
+    border-radius: 3vw; /* Přizpůsobení poloměru */
+    border: 0.2vw solid #ffc04b; /* Přizpůsobení tloušťky ohraničení */
+    font-family: 'Bitter', serif;
+    color: white;
+    background: linear-gradient(to bottom, #275786, #0e234d);
+    text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.4); /* Přizpůsobení stínu */
+    box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.4); /* Přizpůsobení stínu */
+}
+
+#end {
+    width: 50%; /* Přizpůsobení šířky */
+    max-width: 300px; /* Přizpůsobení maximální šířky */
+    height: auto; /* Přizpůsobení výšky */
+    border-radius: 2%; /* Přizpůsobení poloměru */
+    color: white;
+    background-color: #28529d;
+    border: 0.5vw solid #ffc04b; /* Přizpůsobení tloušťky ohraničení */
+    font-size: 2vw; /* Relativní velikost písma */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+}
